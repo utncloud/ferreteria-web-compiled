@@ -14,11 +14,12 @@ export class ProductDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.paramMap.get??('id');
-    console.log(id);
+    
+    let id:any = this.route.snapshot.paramMap.get('id');
+   // console.log(id);
     this.pageTitle += `: ${id}`;
     this.product= {
-      "productId": id,
+      "productId": id,  
         "productName": "Garden Cart",
         "productCode": "GDN-0023",
         "releaseDate": "March 18, 2019",
@@ -27,6 +28,8 @@ export class ProductDetailComponent implements OnInit {
         "starRating": 5,
         "imageUrl": "assets/images/garden.jpg"
     }
+
+    
   }
 
   onBack(): void{
