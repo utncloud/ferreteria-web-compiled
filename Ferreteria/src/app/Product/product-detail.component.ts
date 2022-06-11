@@ -1,24 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from './product';
+import { ProductService } from "./product.service";
 
 @Component({
   //selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
+  providers: [ProductService]
 })
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   product!: IProduct;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
-    
     let id:any = this.route.snapshot.paramMap.get('id');
-   // console.log(id);
     this.pageTitle += `: ${id}`;
-    this.product= {
+
+    this.productService.getProducts().subscribe({
+        next: products => {
+            this.product =  products;
+        },
+        error: err => this.errorMessage = err
+    });
+
+    /*this.product= {
       "productId": id,  
         "productName": "Garden Cart",
         "productCode": "GDN-0023",
@@ -27,7 +35,7 @@ export class ProductDetailComponent implements OnInit {
         "description":"15 gallon capacity rolling garden cart",
         "starRating": 5,
         "imageUrl": "assets/images/garden.jpg"
-    }
+    }*/
 
     
   }

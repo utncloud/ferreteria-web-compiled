@@ -16,4 +16,4 @@ import { Component } from '@angular/core';
   //   </div>   
   //   `
 })
-export class AppComponent { pageTitle: string = 'Product Management'}
+export class AppComponent { pageTitle: string = 'Product Inventory'}
