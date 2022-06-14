@@ -12,6 +12,7 @@ import { ProductService } from "./product.service";
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   product!: IProduct;
+  errorMessage:string='';
 
   constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
 
@@ -19,9 +20,11 @@ export class ProductDetailComponent implements OnInit {
     let id:any = this.route.snapshot.paramMap.get('id');
     this.pageTitle += `: ${id}`;
 
-    this.productService.getProducts().subscribe({
+    this.productService.getProducts().subscribe({        
         next: products => {
-            this.product =  products;
+            let prods =  products.filter(item => item.productId==id);
+            if (prods.length>0)
+              this.product = prods[0]
         },
         error: err => this.errorMessage = err
     });
