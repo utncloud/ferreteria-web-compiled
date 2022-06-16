@@ -4,6 +4,7 @@ import { ConverttoSpacesPipe } from '../shared/convert-to-spaces.pipe';
 import { ProductDetailComponent } from './product-detail.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { NewProductComponent } from './new-product.component';
 
 
 
@@ -12,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
     ProductListComponent
     , ConverttoSpacesPipe    
     , ProductDetailComponent
+    , NewProductComponent
   ],
   imports: [    
     ProductRoutingModule,    

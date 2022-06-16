@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from './product';
+import { IProduct } from './Iproduct';
 
 @Component({
   //selector: 'app-product-detail',
@@ -14,7 +14,6 @@ export class ProductDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    
     let id:any = this.route.snapshot.paramMap.get('id');
    // console.log(id);
     this.pageTitle += `: ${id}`;
@@ -27,9 +26,7 @@ export class ProductDetailComponent implements OnInit {
         "description":"15 gallon capacity rolling garden cart",
         "starRating": 5,
         "imageUrl": "assets/images/garden.jpg"
-    }
-
-    
+    }   
   }
 
   onBack(): void{
