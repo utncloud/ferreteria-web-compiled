@@ -5,6 +5,7 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { NewProductComponent } from './new-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { NewProductComponent } from './new-product.component';
   ],
   imports: [    
     ProductRoutingModule,    
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductModule { }
