@@ -16,3 +16,4 @@
 2. Posterior al escribir los casos de pruebas (para cada US), deberá ejecutar los casos de pruebas.
 3. Para cada caso de prueba donde no pasó la prueba deberá generar los defectos (en trello, en el mismo tablero hacer una columna de Defects), cada defecto deberá tener el step by step de cómo reproducir dicho defecto y así el desarrollador pueda encontrar y solucionar el defecto.
 4. El resultado final de los casos de pruebas deberá subirlo a cada historia de usuario correspondiente.
+
