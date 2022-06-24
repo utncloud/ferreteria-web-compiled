@@ -1,3 +1,13 @@
-li {
+/*li {
     font-weight: bold;
+}*/
+
+.title {
+    font-weight: bold;
+}
+
+.errorMessage {
+    font-weight: bold;
+    color: red;
+    font-size: large;
 }

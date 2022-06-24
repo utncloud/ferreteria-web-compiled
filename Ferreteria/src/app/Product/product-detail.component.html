@@ -1,7 +1,10 @@
+<div class="card-header" *ngIf='!product'>
+     <div class="errorMessage">{{errorMessage}}</div>
+</div>
+
 <div class="card" *ngIf='product'>
-    <div class="card-header">
-        {{ pageTitle + ":  " + product.productName}}
-        
+    <div class="card-header title">
+        {{ pageTitle + "-  " + product.productName}}
     </div>
 
     <div class="container">
@@ -21,9 +24,11 @@
             <li>
                 Description: {{product.description}}
             </li>
+            <li>
+                Rating: {{product.starRating}}
+            </li>
         </ul>
     </div>
-  
 
     <div class='card-footer'>
         <button class="btn btn-outline-secondary" (click)="onBack()" style ="width:80px">

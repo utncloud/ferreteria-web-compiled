@@ -18,13 +18,17 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     let id:any = this.route.snapshot.paramMap.get('id');
-    this.pageTitle += `: ${id}`;
-
+    console.log('id: '+ id);
     this.productService.getProducts().subscribe({        
         next: products => {
             let prods =  products.filter(item => item.productId==id);
-            if (prods.length>0)
+            if (prods.length>0){
               this.product = prods[0]
+              this.pageTitle += `: [${prods[0].productCode}]`;
+            }else{
+              this.errorMessage = 'Product not found.';
+              console.log(this.errorMessage);
+            }
         },
         error: err => this.errorMessage = err
     });    

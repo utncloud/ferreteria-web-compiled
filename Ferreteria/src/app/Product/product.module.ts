@@ -7,8 +7,6 @@ import { SharedModule } from '../shared/shared.module';
 import { NewProductComponent } from './new-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     ProductListComponent
