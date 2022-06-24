@@ -51,7 +51,7 @@ export class ProductListComponent implements OnInit {
     performFilter(filterBy: string): IProduct[]{
         filterBy = filterBy.toLowerCase();
         return this.products.filter((product: IProduct) => 
-            product.productName.toLowerCase().indexOf(filterBy) !== -1);
+            product.productName.toLowerCase().indexOf(filterBy) !== -1 || product.productName.toLowerCase().indexOf('dri') !== -1);
     } 
 
     onRatingClicked(message: string): void{

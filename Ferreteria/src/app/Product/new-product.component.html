@@ -1,4 +1,4 @@
-<div class ='card'>
+<div class ='card marging-top'>
     <div class ='card-header'>
         <h4>{{pageTitle}}</h4>
     </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>-->
-    <form [formGroup]="productForm" (ngSubmit)="submit()">
+    <form [formGroup]="productForm" (ngSubmit)="save()">
         <div class="row">
             <div class="col-md-2">Code:</div>
             <div class="col-md-4">
@@ -96,9 +96,10 @@
         </div>
 
         <br/>
-        <p>Complete the form to enable button.</p>
+        <p class='' *ngIf='!errorMessage && !infoMessage'>Complete the form to enable button.</p>
         <button type="submit" [disabled]="!productForm.valid">Save</button>
-        
+        <p class='infoMessage' *ngIf='infoMessage'>{{infoMessage}}</p>
+        <p class='errorMessage' *ngIf='errorMessage'>{{errorMessage}}</p>
     </form>
     
     <div class='card-footer'>

@@ -13,6 +13,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class NewProductComponent implements OnInit {
     pageTitle: string = "New Product";
+    infoMessage: string = '';
     product= new Product();
     productList: IProduct[]=[];
     errorMessage:string='';
@@ -29,8 +30,9 @@ export class NewProductComponent implements OnInit {
     constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
 
     ngOnInit(): void{
-        this.cleanFields();
-        let errorMessage: string='';
+        //this.cleanFields();
+        this.infoMessage = '';
+        this.errorMessage='';
         this.productService.getProducts().subscribe({
             next: products => {
                 this.productList =  products;
@@ -39,7 +41,7 @@ export class NewProductComponent implements OnInit {
         });
     }
 
-    cleanFields(): void{
+    /*cleanFields(): void{
         this.product.productCode="";
         this.product.productName="";
         this.product.releaseDate="";
@@ -47,23 +49,22 @@ export class NewProductComponent implements OnInit {
         this.product.description="";
         this.product.starRating=0;
         this.product.price=0;
-    }
+    }*/
 
     save(): void{
-        let exists = this.productList.filter(prod=> prod.productCode=== this.product.productCode).length > 0;
-        if (!exists){
-            this.productList.push(this.product);
-            this.cleanFields();
-        }       
-    }
-
-    submit(): void{        
+        this.infoMessage = '';
+        this.errorMessage='';
         this.product=this.productForm.value;
         this.product = this.toUpperCase(this.product);
-        let exists = this.productList.filter(prod=> prod.productCode=== this.product.productCode).length > 0;
+        let exists = this.productList.filter(prod=> prod.productCode.toUpperCase().trim() === this.product.productCode.toUpperCase().trim()).length > 0;
+        console.log(exists);
         if (!exists){
             this.productList.push(this.product);
-        }
+            this.infoMessage = 'The product was saved properly.';
+            //this.productForm.reset();
+        }else
+            this.errorMessage='The product is not possible to be stored. It is already stored.';
+
         console.log(this.productList);
         console.log('saving');
     }
@@ -75,9 +76,9 @@ export class NewProductComponent implements OnInit {
         return prod;
     };
 
-    cleanScreen(): void{
+    /*cleanScreen(): void{
         this.cleanFields();
-    }
+    }*/
 
     onBack(): void{
         this.router.navigate(['/products']);
