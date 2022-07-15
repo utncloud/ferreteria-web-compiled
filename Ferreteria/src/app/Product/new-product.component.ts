@@ -12,7 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
     providers: [ProductService]
 })
 export class NewProductComponent implements OnInit {
-    pageTitle: string = "New Product";
+    pageTitle: string = "Add New Product";
     infoMessage: string = '';
     product= new Product();
     productList: IProduct[]=[];

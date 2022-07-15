@@ -16,13 +16,13 @@
         "releaseDate": "May 21, 2019",
         "price": 8.9,
         "description": "Curved claw steel hammer",
-        "starRating": 7.5,
+        "starRating": 4.6,
         "imageUrl": "assets/images/hammer.jpg"
     },
     {
         "productId": 7,
         "productName": "Drill",
-        "productCode": "",
+        "productCode": "PRX-095",
         "releaseDate": "Sept 2nd, 2019",
         "price": 32.9,
         "description":"",
