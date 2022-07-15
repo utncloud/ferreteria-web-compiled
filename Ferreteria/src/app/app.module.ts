@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProductModule } from './Product/product.module';
 import { LoginModule } from './login/login.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({  
   declarations: [
@@ -18,7 +19,8 @@ import { LoginModule } from './login/login.module';
     HttpClientModule,
     ProductModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]

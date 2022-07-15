@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { IProduct } from "./Iproduct";
-import { Product } from "./product";
-import { ProductService } from "./product.service";
+import { IProduct } from "../Iproduct";
+import { Product } from "../product";
+import { ProductService } from "../services/product.service";
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -57,13 +57,14 @@ export class NewProductComponent implements OnInit {
         this.product=this.productForm.value;
         this.product = this.toUpperCase(this.product);
         let exists = this.productList.filter(prod=> prod.productCode.toUpperCase().trim() === this.product.productCode.toUpperCase().trim()).length > 0;
+        let existsproductNm = this.productList.filter(prod=> prod.productName.toUpperCase().trim() === this.product.productName.toUpperCase().trim()).length > 0;
         console.log(exists);
-        if (!exists){
+        if (!exists && !existsproductNm){
             this.productList.push(this.product);
             this.infoMessage = 'The product was saved properly.';
             //this.productForm.reset();
         }else
-            this.errorMessage='The product is not possible to be stored. It is already stored.';
+            this.errorMessage='The product is not already stored and no possible to be stored. Please check the product code and product name';
 
         console.log(this.productList);
         console.log('saving');
