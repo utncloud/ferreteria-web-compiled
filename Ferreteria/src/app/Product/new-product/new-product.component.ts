@@ -3,7 +3,7 @@ import { IProduct } from "../Iproduct";
 import { Product } from "../product";
 import { ProductService } from "../services/product.service";
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
     //selector: 'app-product-editor',
@@ -18,13 +18,13 @@ export class NewProductComponent implements OnInit {
     productList: IProduct[]=[];
     errorMessage:string='';
 
-    productForm = new FormGroup({
-        productCode: new FormControl('', Validators.required),
-        productName: new FormControl('', Validators.required),
-        releaseDate: new FormControl('', Validators.required),
-        description: new FormControl('', Validators.required),
-        price: new FormControl('', Validators.required),
-        starRating: new FormControl('', Validators.required)        
+    productForm = new UntypedFormGroup({
+        productCode: new UntypedFormControl('', Validators.required),
+        productName: new UntypedFormControl('', Validators.required),
+        releaseDate: new UntypedFormControl('', Validators.required),
+        description: new UntypedFormControl('', Validators.required),
+        price: new UntypedFormControl('', Validators.required),
+        starRating: new UntypedFormControl('', Validators.required)        
       });
 
     constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
