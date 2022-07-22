@@ -1,0 +1,23 @@
+div{
+    margin-top: 3px;
+}
+
+.input-upper{
+    text-transform: uppercase;
+}
+
+p{
+    font-weight: bold;
+}
+
+.infoMessage{
+    color: blue;
+}
+
+.errorMessage{
+    color: red;
+}
+
+.marging-top{
+    margin-top: 50px;
+}

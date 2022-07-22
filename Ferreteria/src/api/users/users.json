@@ -1,0 +1,62 @@
+[
+    {
+        "userName": "rloria",
+        "password":"lroria",
+        "isActive": false,
+        "role":"Admin"
+    },
+    {
+        "userName": "dquesada",
+        "password":"Dquesada123@",
+        "isActive": true,
+        "role":"Read"
+    },
+    {
+        "userName": "dquesada",
+        "password":"Dquesada123@",
+        "isActive": true,
+        "role":"Read"
+    },
+    {
+        "userName": "wgarcia",
+        "password":"wgarcia",
+        "isActive": true,
+        "role":""
+    },
+    {
+        "userName": "kchaves",
+        "password":"Kchaves@",
+        "isActive": true,
+        "role":"Read"
+    },
+    {
+        "userName": "kangulo",
+        "password":"kangulo@",
+        "isActive": false,
+        "role":"Admin"
+    },
+    {
+        "userName": "hespinoza",
+        "password":"123",
+        "isActive": true,
+        "role":"Read"
+    },
+    {
+        "userName": "acruz",
+        "password":"@cruZ213",
+        "isActive": true,
+        "role":"Writer"
+    },
+    {
+        "userName": "mrodriguez",
+        "password":"Mrodriguez@",
+        "isActive": true,
+        "role":"Writer"
+    },
+    {
+        "userName": "vvega",
+        "password":"vvega@",
+        "isActive": true,
+        "role":"Read"
+    }
+]

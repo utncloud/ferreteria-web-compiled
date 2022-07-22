@@ -1,0 +1,41 @@
+<div class="marging-top">
+    <div class="card-header" *ngIf='!product'>
+        <div class="errorMessage">{{errorMessage}}</div>
+   </div>
+   
+   <div class="card" *ngIf='product'>
+       <div class="card-header title">
+           {{ pageTitle + "-  " + product.productName}}
+       </div>
+   
+       <div class="container">
+           <ul>
+               <li>
+                   Producto: {{product.productName}}
+               </li>
+               <li>
+                   Code: {{product.productCode}}
+               </li>
+               <li>
+                   Available: {{product.releaseDate}}
+               </li>
+               <li>
+                   Price: {{product.price}}
+               </li>
+               <li>
+                   Description: {{product.description}}
+               </li>
+               <li>
+                   Rating: {{product.starRating}}
+               </li>
+           </ul>
+       </div>
+   
+       <div class='card-footer'>
+           <button class="btn btn-outline-secondary" (click)="onBack()" style ="width:80px">
+              <i class='fa fa-chevron-left'></i> Back
+           </button>
+       </div>
+   </div>
+   
+</div>
