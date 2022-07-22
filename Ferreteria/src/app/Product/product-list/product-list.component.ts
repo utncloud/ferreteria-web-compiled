@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { IProduct } from "./product";
-import { ProductService } from "./product.service";
+import { IProduct } from "../Iproduct";
+import { ProductService } from "../services/product.service";
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     //selector:"app-products", --> removed for routing configuration because is not needed
@@ -26,7 +27,11 @@ export class ProductListComponent implements OnInit {
         this.filteredProduct = this.listFilter ? this.performFilter(this.listFilter) : this.products;
     }    
     
-    constructor(private productService: ProductService) { }
+    constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
+
+    addNewProduct(): void{
+        this.router.navigate(['/newproduct']);
+    }
 
     toggleImage(): void{
         this.showImage = !this.showImage;
@@ -34,10 +39,6 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit(): void{
         let errorMessage: string='';
-        // this.productService.getProducts().subscribe({
-        //     next(products) { console.log(products) },
-        //     error(err) { console.log(err) }
-        // });
         this.productService.getProducts().subscribe({
             next: products => {
                 this.products =  products;
@@ -48,9 +49,9 @@ export class ProductListComponent implements OnInit {
     }
 
     performFilter(filterBy: string): IProduct[]{
-        filterBy: filterBy;//.toLocaleLowerCase();
+        filterBy = filterBy.toLowerCase();
         return this.products.filter((product: IProduct) => 
-            product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+            product.productName.toLowerCase().indexOf(filterBy) !== -1 || product.productName.toLowerCase().indexOf('dri') !== -1);
     } 
 
     onRatingClicked(message: string): void{
