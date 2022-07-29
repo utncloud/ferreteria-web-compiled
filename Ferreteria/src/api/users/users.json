@@ -2,60 +2,63 @@
     {
         "userName": "rloria",
         "password":"lroria",
+        "email":"lroria@est.utn.ac.cr",
         "isActive": false,
         "role":"Admin"
     },
     {
         "userName": "dquesada",
         "password":"Dquesada123@",
-        "isActive": true,
-        "role":"Read"
-    },
-    {
-        "userName": "dquesada",
-        "password":"Dquesada123@",
+        "email":"dquesada@est.utn.ac.cr",
         "isActive": true,
         "role":"Read"
     },
     {
         "userName": "wgarcia",
         "password":"wgarcia",
+        "email":"wgarcia@est.utn.ac.cr",
         "isActive": true,
         "role":""
     },
     {
         "userName": "kchaves",
         "password":"Kchaves@",
+        "email":"kchaves@est.utn.ac.cr",
         "isActive": true,
         "role":"Read"
     },
     {
         "userName": "kangulo",
         "password":"kangulo@",
+        "email":"kangulo@est.utn.ac.cr",
         "isActive": false,
         "role":"Admin"
     },
     {
         "userName": "hespinoza",
         "password":"123",
+        "email":"herpinoza@est.utn.ac.cr",
         "isActive": true,
         "role":"Read"
     },
     {
         "userName": "acruz",
         "password":"@cruZ213",
+        "email":"acruz@est.utn.ac.cr",
         "isActive": true,
         "role":"Writer"
     },
     {
         "userName": "mrodriguez",
         "password":"Mrodriguez@",
+        "email":"mrodruguez@est.utn.ac.cr",
         "isActive": true,
         "role":"Writer"
     },
     {
         "userName": "vvega",
         "password":"vvega@",
+        "email":"vvega@est.utn.ac.cr",
         "isActive": true,
         "role":"Read"
     }

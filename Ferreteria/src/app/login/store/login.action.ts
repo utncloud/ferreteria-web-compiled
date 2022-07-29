@@ -11,6 +11,7 @@ export class LogoutUser implements Action {
     readonly type = LoginConstant.LOGOUT_USER;
 }
 
+
 export type LoginActions = 
     | AuthenticateUser
     | LogoutUser;

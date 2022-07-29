@@ -22,6 +22,9 @@ export const loginReducer = (state= initialState, action: LoginActions.LoginActi
                 auth: null
             };
 
+        //case LoginConstant.GET_AUTH_USER:
+         //   return state
+
         default:
             return state;
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { IProduct } from "../Iproduct";
 import { ProductService } from "../services/product.service";
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from "../../login/services/login.service";
 
 @Component({
     //selector:"app-products", --> removed for routing configuration because is not needed
@@ -27,7 +28,7 @@ export class ProductListComponent implements OnInit {
         this.filteredProduct = this.listFilter ? this.performFilter(this.listFilter) : this.products;
     }    
     
-    constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
+    constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router, private loginService: LoginService) { }
 
     addNewProduct(): void{
         this.router.navigate(['/newproduct']);
@@ -38,6 +39,11 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit(): void{
+        if (this.loginService.userAuthenticate==null){
+            this.router.navigate(['/login']);
+        }
+
+
         let errorMessage: string='';
         this.productService.getProducts().subscribe({
             next: products => {

@@ -4,6 +4,7 @@ import { Product } from "../product";
 import { ProductService } from "../services/product.service";
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
+import { LoginService } from "../../login/services/login.service";
 
 @Component({
     //selector: 'app-product-editor',
@@ -27,9 +28,13 @@ export class NewProductComponent implements OnInit {
         starRating: new UntypedFormControl('', Validators.required)        
       });
 
-    constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
+    constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router, private loginService:LoginService) { }
 
     ngOnInit(): void{
+        if (this.loginService.userAuthenticate==null){
+            this.router.navigate(['/login']);
+          }
+          
         //this.cleanFields();
         this.infoMessage = '';
         this.errorMessage='';
