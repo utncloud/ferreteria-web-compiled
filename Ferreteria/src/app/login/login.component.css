@@ -1,3 +1,7 @@
 .marging-top{
     margin-top: 50px;
 }
+
+.errorMessage{
+    color: red;
+}

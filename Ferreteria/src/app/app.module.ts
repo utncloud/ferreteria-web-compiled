@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductModule } from './Product/product.module';
 import { LoginModule } from './login/login.module';
 import { StoreModule } from '@ngrx/store';
+import { appReducer} from './store/app.reducer';
 
 @NgModule({  
   declarations: [
@@ -20,7 +21,7 @@ import { StoreModule } from '@ngrx/store';
     ProductModule,
     AppRoutingModule,
     LoginModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot(appReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

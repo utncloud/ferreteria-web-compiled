@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from '../Iproduct';
 import { ProductService } from "../services/product.service";
+import { LoginService } from "../../login/services/login.service";
 
 @Component({
   //selector: 'app-product-detail',
@@ -14,9 +15,13 @@ export class ProductDetailComponent implements OnInit {
   product!: IProduct;
   errorMessage:string='';
 
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService, private loginService: LoginService) { }
 
   ngOnInit(): void {
+    if (this.loginService.userAuthenticate==null){
+      this.router.navigate(['/login']);
+    }
+
     let id:any = this.route.snapshot.paramMap.get('id');
     console.log('id: '+ id);
     this.productService.getProducts().subscribe({        
