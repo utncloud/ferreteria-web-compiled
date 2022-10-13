@@ -1,0 +1,20 @@
+{
+    "/api/products": {
+      "target": "https://tools-product-api.azurewebsites.net",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    },
+    "/api/users/*": {
+        "target": "https://tools-auth-api.azurewebsites.net",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+          "^/api": ""
+        }
+      }
+}

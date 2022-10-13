@@ -13,8 +13,7 @@ import { IAuthResponse } from "../models/login.interface";
     providedIn: 'root',
   })
   export class LoginService {
-    //url = '../../../api/users/users.json';
-    url='http://localhost:3008/users';
+    url= '/api/users';
     subscriptionUser: Subscription = null;
     userAuthenticate:IAuth;
 
