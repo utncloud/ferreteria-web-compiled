@@ -1,4 +1,4 @@
-# Ejercicio en clase ItI 1312-2022 - Semana 05
+# Ejercicio en clase
 
 # Cómo correr el app?
 
