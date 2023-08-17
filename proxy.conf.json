@@ -1,0 +1,20 @@
+{
+    "/api/products": {
+      "target": "https://nu5m6h3hji.us-east-1.awsapprunner.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    },
+    "/api/users/*": {
+        "target": "https://s4stf8dnfm.us-east-1.awsapprunner.com/",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+          "^/api": ""
+        }
+      }
+}
