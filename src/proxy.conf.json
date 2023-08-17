@@ -1,6 +1,6 @@
 {
     "/api/products": {
-      "target": "https://tools-product-api.azurewebsites.net",
+      "target": "https://nu5m6h3hji.us-east-1.awsapprunner.com",
       "secure": false,
       "logLevel": "debug",
       "changeOrigin": true,
@@ -9,7 +9,7 @@
       }
     },
     "/api/users/*": {
-        "target": "https://tools-auth-api.azurewebsites.net",
+        "target": "https://s4stf8dnfm.us-east-1.awsapprunner.com/",
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true,
